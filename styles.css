@@ -1,0 +1,58 @@
+:root {
+  --fondo-oscuro: #0c0f14;
+  --detalles-bordes: #1e252f;
+  --texto-principal: #dcdfe4;
+  --texto-secundario: #a1a6b2;
+  --elemento-destacado: #6c93b5;
+  --hover-efecto: #8ea6c0;
+  --acento-beige: #e3c8a1;
+  --font-primary: 'Cinzel', serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-principal);
+  font-family: var(--font-primary);
+}
+.button {
+  background-color: var(--elemento-destacado);
+  color: var(--fondo-oscuro);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.button:hover {
+  background-color: var(--hover-efecto);
+}
+.productImg {
+  height: 200px;
+  width: 300px;
+  border-radius: 10px;
+}
+main {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.maps {
+  max-width: 100%;
+  width: 300px;
+  height: 400px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: var(--detalles-bordes);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
