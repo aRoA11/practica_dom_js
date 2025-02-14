@@ -1,4 +1,4 @@
-const products = [
+const maps = [
   {
     name: 'Forgotten Crossroads',
     price: '30 geos',
@@ -81,12 +81,16 @@ const products = [
 ]
 
 let content = document.querySelector('.tarjetas')
-for (const product of products) {
+for (const map of maps) {
   let container = document.createElement('article')
   container.classList.add('maps')
-  container.innerHTML = `<img src='${product.image}' alt="${product.name} Map" class="productImg">
-  <p class="productName">${product.name}</p>
-  <p class="productPrice">Price: ${product.price}</p>
-  <p class="producSeller">Seller: ${product.seller}</p>`
+  container.innerHTML = `<img src='${map.image}' alt="${map.name} Map" class="productImg">
+  <div>
+  <p class="productName">${map.name}</p>
+  <p class="productPrice">Price: ${map.price}</p>
+  <p class="producSeller">Seller: ${map.seller}</p>
+  <button class='productButton'> comprar </button>
+  <div/>
+   `
   content.appendChild(container)
 }
