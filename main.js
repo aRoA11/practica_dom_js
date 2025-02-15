@@ -85,12 +85,10 @@ for (const map of maps) {
   let container = document.createElement('article')
   container.classList.add('maps')
   container.innerHTML = `<img src='${map.image}' alt="${map.name} Map" class="productImg">
-  <div>
-  <p class="productName">${map.name}</p>
-  <p class="productPrice">Price: ${map.price}</p>
-  <p class="producSeller">Seller: ${map.seller}</p>
-  <button class='productButton'> comprar </button>
-  <div/>
+   <p id="name" class="product">${map.name}</p>
+    <p id="price" class="product">Price: ${map.price}</p>
+    <p id="seller" class="product">Seller: ${map.seller}</p>
+    <button id="button" class="product">comprar</button>
    `
   content.appendChild(container)
 }
