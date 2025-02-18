@@ -79,11 +79,16 @@ const maps = [
     image: './recursos/Gueens_Garden_Map.jpg'
   }
 ]
-
-let content = document.querySelector('.tarjetas')
+// Header
+const header = document.querySelector('header')
+header.innerHTML = `
+<img src="./recursos/cornifer.PNG" alt="logo-cornifer">
+<h1>The Map Burrow</h1>`
+// Tarjetas
+let content = document.querySelector('.products')
 for (const map of maps) {
   let container = document.createElement('article')
-  container.classList.add('maps')
+  container.classList.add('tarjetas')
   container.innerHTML = `<img src='${map.image}' alt="${map.name} Map" class="productImg">
    <p id="name" class="product">${map.name}</p>
     <p id="price" class="product">Price: ${map.price}</p>
@@ -92,3 +97,45 @@ for (const map of maps) {
    `
   content.appendChild(container)
 }
+
+// Barra de búsqueda
+//buscador
+const search = document.querySelector('.search')
+search.innerHTML = `
+<article>
+  <label for="buscar">Buscar:</label>
+  <input class= 'hola' type="text" id="buscar" placeholder="Buscar..." oninput="filtrarMapas()"></article>
+`
+
+function filtrarMapas() {
+  const inputBusqueda = document.getElementById('buscar').value.toLowerCase()
+  const contenedorMapas = document.querySelector('.products')
+  contenedorMapas.innerHTML = ''
+
+  const mapasFiltrados = maps.filter((mapa) =>
+    mapa.name.toLowerCase().includes(inputBusqueda)
+  )
+
+  mapasFiltrados.forEach((mapa) => {
+    let container = document.createElement('article')
+    container.classList.add('buscados')
+    container.innerHTML = `
+      <img src='${mapa.image}' alt="${mapa.name} Map" class="productImg">
+      <p id="name" class="product">${mapa.name}</p>
+    <p id="price" class="product">Price: ${mapa.price}</p>
+    <p id="seller" class="product">Seller: ${mapa.seller}</p>
+    <button id="button" class="product">comprar</button>
+    `
+    contenedorMapas.appendChild(container)
+  })
+}
+//ordenar
+search.innerHTML += `<label for="ordenar">Ordenar por:</label>
+<select id="ordenar">
+  <option value="default">Por defecto</option>
+  <option value="asc">Precio: Menor a mayor</option>
+  <option value="desc">Precio: Mayor a menor</option>
+  <option value="az">Nombre: A-Z</option>
+  <option value="za">Nombre: Z-A</option>
+</select>
+`
