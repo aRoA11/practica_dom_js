@@ -139,3 +139,36 @@ search.innerHTML += `<label for="ordenar">Ordenar por:</label>
   <option value="za">Nombre: Z-A</option>
 </select>
 `
+document.getElementById('ordenar').addEventListener('change', function () {
+  const criterio = this.value
+
+  let mapasOrdenados = [...maps]
+  if (criterio === 'asc') {
+    mapasOrdenados.sort((a, b) => parseInt(a.price) - parseInt(b.price))
+  } else if (criterio === 'desc') {
+    mapasOrdenados.sort((a, b) => parseInt(b.price) - parseInt(a.price))
+  } else if (criterio === 'az') {
+    mapasOrdenados.sort((a, b) => a.name.localeCompare(b.name))
+  } else if (criterio === 'za') {
+    mapasOrdenados.sort((a, b) => b.name.localeCompare(a.name))
+  }
+
+  renderizarMapas(mapasOrdenados)
+})
+
+function renderizarMapas(mapas) {
+  let content = document.querySelector('.products')
+  content.innerHTML = ''
+
+  for (const map of mapas) {
+    let container = document.createElement('article')
+    container.classList.add('tarjetas')
+    container.innerHTML = `<img src='${map.image}' alt="${map.name} Map" class="productImg">
+      <p id="name" class="product">${map.name}</p>
+      <p id="price" class="product">Price: ${map.price}</p>
+      <p id="seller" class="product">Seller: ${map.seller}</p>
+      <button id="button" class="product">Comprar</button>`
+
+    content.appendChild(container)
+  }
+}
