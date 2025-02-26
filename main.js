@@ -103,8 +103,8 @@ for (const map of maps) {
 const search = document.querySelector('.search')
 search.innerHTML = `
 <article>
-  <label for="buscar">Buscar:</label>
-  <input class= 'hola' type="text" id="buscar" placeholder="Buscar..." oninput="filtrarMapas()"></article>
+  <label for="buscar">Search:</label>
+  <input class= 'hola' type="text" id="buscar" placeholder="Search..." oninput="filtrarMapas()"></article>
 `
 
 function filtrarMapas() {
@@ -130,14 +130,15 @@ function filtrarMapas() {
   })
 }
 //ordenar
-search.innerHTML += `<div> <label for="ordenar">Ordenar por:</label>
+search.innerHTML += `<div> <label for="ordenar">Sort by:</label>
 <select id="ordenar">
-  <option value="default">Por defecto</option>
-  <option value="asc">Precio: Menor a mayor</option>
-  <option value="desc">Precio: Mayor a menor</option>
-  <option value="az">Nombre: A-Z</option>
-  <option value="za">Nombre: Z-A</option>
-</select> </div>
+  <option value="default">Default</option>
+  <option value="asc">Price: Low to High</option>
+  <option value="desc">Price: High to Low</option>
+  <option value="az">Name: A-Z</option>
+  <option value="za">Name: Z-A</option>
+</select>
+ </div>
 `
 document.getElementById('ordenar').addEventListener('change', function () {
   const criterio = this.value

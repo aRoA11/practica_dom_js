@@ -56,8 +56,9 @@ h1 {
   font-size: 30px;
 }
 #button {
+  font-size: 15px;
+  height: 30px;
   color: var(--texto-principal);
-  padding: 2% 30%;
   background-color: var(--elemento-destacado);
   font-family: var(--font-primary);
   border-radius: 5px;
@@ -76,12 +77,15 @@ h1 {
 }
 #name {
   color: var(--texto-principal);
-  font-size: 20px;
+  font-size: 17px;
+  margin-right: 20px;
 }
 #price {
+  font-size: 15px;
   color: var(--texto-secundario);
 }
 #seller {
+  font-size: 15px;
   color: var(--texto-secundario);
 }
 .product {
@@ -100,15 +104,17 @@ h1 {
 }
 
 .tarjetas {
-  justify-items: start;
+  min-height: 300px;
   box-shadow: 0px 0px 77px -17px rgba(13, 16, 20, 1);
   max-width: 100;
   padding: 20px 20px;
   border-radius: 10px;
   text-align: center;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   text-align: justify;
+  justify-content: space-between;
 }
 .search {
   margin-left: 20px;
@@ -170,15 +176,63 @@ h1 {
 }
 @media (max-width: 505px) {
   header {
+    margin-left: 20px;
     display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  img {
+    margin-left: 0;
+    width: 70px;
+    height: 50px;
   }
   h1 {
+    margin-left: 0;
+    margin-right: 20px;
     font-size: 22px;
   }
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  #name {
+    font-size: 17px;
+    margin: 5px 50px 0px 5px;
   }
+  #price {
+    font-size: 14px;
+    margin: 2.5px 42px 0px 5px;
+  }
+  #seller {
+    font-size: 14px;
+    margin-top: 2.5px;
+    margin-left: 5px;
+  }
+  #button {
+    width: 95%;
+    padding: 2px 2px;
+    margin-top: 2.5px;
+    margin-left: 5px;
+  }
+  .products {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(143px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+  }
+  .tarjetas {
+    width: 200px;
+    min-width: 145px;
+    /* height: 400px; */
+  }
+  /* .tarjetas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+  } */
+
   .search {
     display: flex;
     flex-wrap: wrap;
