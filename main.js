@@ -130,14 +130,14 @@ function filtrarMapas() {
   })
 }
 //ordenar
-search.innerHTML += `<label for="ordenar">Ordenar por:</label>
+search.innerHTML += `<div> <label for="ordenar">Ordenar por:</label>
 <select id="ordenar">
   <option value="default">Por defecto</option>
   <option value="asc">Precio: Menor a mayor</option>
   <option value="desc">Precio: Mayor a menor</option>
   <option value="az">Nombre: A-Z</option>
   <option value="za">Nombre: Z-A</option>
-</select>
+</select> </div>
 `
 document.getElementById('ordenar').addEventListener('change', function () {
   const criterio = this.value

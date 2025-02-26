@@ -35,6 +35,7 @@ main {
   gap: 40px;
 }
 header {
+  margin-top: 20px;
   max-width: 100%;
   padding: 1% 0 1% 0%;
   display: flex;
@@ -45,17 +46,18 @@ header {
 
 img {
   margin-left: 30px;
-  width: 75px;
+  width: 90px;
   height: 60px;
 }
 h1 {
   flex-grow: 1;
   text-align: center;
   margin-right: 80px;
+  font-size: 30px;
 }
 #button {
   color: var(--texto-principal);
-  padding: 8px 40px;
+  padding: 2% 30%;
   background-color: var(--elemento-destacado);
   font-family: var(--font-primary);
   border-radius: 5px;
@@ -93,10 +95,12 @@ h1 {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: start;
   gap: 30px;
 }
 
 .tarjetas {
+  justify-items: start;
   box-shadow: 0px 0px 77px -17px rgba(13, 16, 20, 1);
   max-width: 100;
   padding: 20px 20px;
@@ -108,10 +112,14 @@ h1 {
 }
 .search {
   margin-left: 20px;
+  margin-right: 20px;
   margin-top: 20px;
   color: var(--texto-principal);
+  gap: 5px;
 }
 .hola {
+  margin: 5px;
+  width: 115px;
   font-family: var(--font-primary);
   box-shadow: 0px 0px 77px -17px rgba(13, 16, 20, 1);
   padding: 2.5px;
@@ -136,9 +144,43 @@ h1 {
   text-align: justify;
 }
 #ordenar {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  margin: 5px;
+  width: 115px;
   padding: 5px;
   border-radius: 5px;
-  background-color: var(--tarjetas);
-  color: var(--texto-principal);
-  border: 1.5px solid var(--texto-secundario);
+  background-color: rgba(183, 205, 221, 0.236);
+  color: var(--detalles-bordes);
+  border: 2px solid var(--detalles-bordes);
+}
+@media (max-width: 840px) {
+  main {
+    display: contents;
+  }
+  .products {
+    margin: 10px 30px 0px 30px;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  body {
+  }
+}
+@media (max-width: 505px) {
+  header {
+    display: flex;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .search {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
