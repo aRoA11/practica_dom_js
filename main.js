@@ -83,7 +83,7 @@ const maps = [
 const header = document.querySelector('header')
 header.innerHTML = `
 <img src="./recursos/cornifer.PNG" alt="logo-cornifer">
-<h1>The Map Burrow</h1>`
+<h1 id= 'inicio'>The Map Burrow</h1>`
 // Tarjetas
 let content = document.querySelector('.products')
 for (const map of maps) {
@@ -173,3 +173,7 @@ function renderizarMapas(mapas) {
     content.appendChild(container)
   }
 }
+// footer
+const footer = document.querySelector('footer')
+let uwu = document.createElement()
+footer.innerHTML = `<section><a href="#inicio">Volver arriba ▲</a></section>`

@@ -43,7 +43,11 @@ header {
   align-items: center;
   gap: 30px;
 }
-
+a {
+  font-family: var(--font-primary);
+  color: var(--texto-principal);
+  text-decoration: none;
+}
 img {
   margin-left: 30px;
   width: 90px;
@@ -66,6 +70,7 @@ h1 {
 }
 
 #button:hover {
+  cursor: pointer;
   background-color: var(--hover-efecto);
   color: var(--fondo-oscuro);
 }
@@ -160,6 +165,13 @@ h1 {
   color: var(--detalles-bordes);
   border: 2px solid var(--detalles-bordes);
 }
+footer {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  color: var(--texto-principal);
+  font-family: var(--font-primary);
+}
 @media (max-width: 840px) {
   main {
     display: contents;
@@ -170,8 +182,6 @@ h1 {
   .search {
     display: flex;
     align-items: center;
-  }
-  body {
   }
 }
 @media (max-width: 505px) {
@@ -211,8 +221,6 @@ h1 {
     margin-left: 5px;
   }
   .products {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(143px, 1fr)); */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -222,17 +230,7 @@ h1 {
   .tarjetas {
     width: 200px;
     min-width: 145px;
-    /* height: 400px; */
   }
-  /* .tarjetas {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 20px;
-  } */
-
   .search {
     display: flex;
     flex-wrap: wrap;
