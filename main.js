@@ -175,5 +175,7 @@ function renderizarMapas(mapas) {
 }
 // footer
 const footer = document.querySelector('footer')
-let uwu = document.createElement()
-footer.innerHTML = `<section><a href="#inicio">Volver arriba ▲</a></section>`
+const section = document.createElement('section')
+let infoDiv = document.createElement('div')
+let infoUl = DocumentTimeline.createElement
+footer.innerHTML += `<section><a href="#inicio">Volver al inicio ▲</a></section>`
