@@ -79,11 +79,25 @@ const maps = [
     image: './recursos/Gueens_Garden_Map.jpg'
   }
 ]
+const elements = [
+  {
+    categoria: 'Information',
+    uno: 'Unofficial page about Hollow.',
+    dos: 'Created by Aroa Trigo.',
+    tres: 'All information is compiled by fans.'
+  },
+  {
+    categoria: 'Credits and Sources',
+    uno: `Images and content belong to Hollow's Wiki.`,
+    dos: 'This site is not affiliated with Team Cherry.',
+    tres: ''
+  }
+]
 // Header
 const header = document.querySelector('header')
 header.innerHTML = `
 <img src="./recursos/cornifer.PNG" alt="logo-cornifer">
-<h1 id= 'inicio'>The Map Burrow</h1>`
+<h1>The Map Burrow</h1>`
 // Tarjetas
 let content = document.querySelector('.products')
 for (const map of maps) {
@@ -175,7 +189,16 @@ function renderizarMapas(mapas) {
 }
 // footer
 const footer = document.querySelector('footer')
-const section = document.createElement('section')
-let infoDiv = document.createElement('div')
-let infoUl = DocumentTimeline.createElement
-footer.innerHTML += `<section><a href="#inicio">Volver al inicio ▲</a></section>`
+const datos = document.createElement('section')
+datos.classList.add('datos')
+for (const element of elements) {
+  let listas = document.createElement('ul')
+  listas.classList.add('listas')
+  listas.innerHTML = `<li id='categoria'>${element.categoria}</li>
+  <li>${element.uno}</li> 
+  <li>${element.dos}</li>
+  <li>${element.tres}</li> `
+  datos.appendChild(listas)
+  footer.appendChild(datos)
+}
+footer.innerHTML += `<section class='volver' ><a href="#inicio">Volver al inicio ▲</a></section>`
